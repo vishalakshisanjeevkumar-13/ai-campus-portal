@@ -66,6 +66,11 @@ async def lifespan(app: FastAPI):
     """Application startup and shutdown events."""
     init_indexes()
     try:
+        from state_manager import seed_initial_data_if_empty
+        seed_initial_data_if_empty()
+    except Exception:
+        pass
+    try:
         load_model_artifacts()
     except Exception:
         pass

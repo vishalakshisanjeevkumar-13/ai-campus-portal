@@ -157,3 +157,36 @@ def persist_assessment_attempt(student_id: str, attempt_record: Dict[str, Any]) 
                 db[COLLECTION_ASSESSMENTS].insert_one({**attempt_record, "student_id": student_id})
         except Exception:
             pass
+
+
+def seed_initial_data_if_empty() -> None:
+    """
+    Seeds initial demo student data into MongoDB Atlas if the database is newly initialized.
+    Ensures that collections and records appear immediately upon first deployment.
+    """
+    db_check = check_database_connection()
+    if not db_check["connected"]:
+        return
+
+    try:
+        db = get_database()
+        if db is not None:
+            if db[COLLECTION_STUDENTS].count_documents({"student_id": DEFAULT_STUDENT_ID}) == 0:
+                # 1. Profile
+                db[COLLECTION_STUDENTS].insert_one({**INITIAL_STUDENT_PROFILE, "student_id": DEFAULT_STUDENT_ID})
+                # 2. Academics
+                if db[COLLECTION_ACADEMICS].count_documents({"student_id": DEFAULT_STUDENT_ID}) == 0:
+                    db[COLLECTION_ACADEMICS].insert_many([dict(a) for a in INITIAL_ACADEMIC_RECORDS])
+                # 3. Skills
+                if db[COLLECTION_SKILLS].count_documents({"student_id": DEFAULT_STUDENT_ID}) == 0:
+                    skills_to_insert = [{**s, "student_id": DEFAULT_STUDENT_ID} for s in INITIAL_SKILLS]
+                    db[COLLECTION_SKILLS].insert_many(skills_to_insert)
+                # 4. Assessment Attempts
+                if db[COLLECTION_ASSESSMENTS].count_documents({"student_id": DEFAULT_STUDENT_ID}) == 0:
+                    attempts_to_insert = [{**att, "student_id": DEFAULT_STUDENT_ID} for att in INITIAL_ATTEMPTS]
+                    db[COLLECTION_ASSESSMENTS].insert_many(attempts_to_insert)
+                # 5. Study Tasks
+                if db[COLLECTION_STUDY_TASKS].count_documents({"student_id": DEFAULT_STUDENT_ID}) == 0:
+                    db[COLLECTION_STUDY_TASKS].insert_many([dict(t) for t in INITIAL_STUDY_TASKS])
+    except Exception:
+        pass
