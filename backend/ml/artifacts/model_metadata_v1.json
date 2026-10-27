@@ -1,0 +1,134 @@
+{
+  "model_version": "v1.0.0",
+  "artifact_file": "academic_risk_pipeline_v1.joblib",
+  "trained_at_utc": "2026-10-27T08:08:49.805429+00:00",
+  "task_type": "Binary Classification (Early Academic At-Risk Warning)",
+  "dataset": {
+    "name": "UCI Student Performance Dataset (Mathematics Course)",
+    "citation": "Cortez, P., & Silva, A. (2008). Using data mining to predict secondary school student performance. FUBUTEC 2008, pp. 5-12.",
+    "source_url": "https://archive.ics.uci.edu/dataset/320/student+performance",
+    "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+    "total_instances": 395,
+    "train_instances": 296,
+    "test_instances": 99,
+    "class_distribution": {
+      "on_track_0": 265,
+      "on_track_pct": 67.1,
+      "at_risk_1": 130,
+      "at_risk_pct": 32.9
+    }
+  },
+  "features": {
+    "g1_score": {
+      "type": "float",
+      "range": [
+        0.0,
+        20.0
+      ],
+      "description": "First period academic assessment grade on a 0-20 scale."
+    },
+    "studytime": {
+      "type": "int",
+      "range": [
+        1,
+        4
+      ],
+      "description": "Weekly study time category: 1 (<2h), 2 (2-5h), 3 (5-10h), 4 (>10h)."
+    },
+    "failures": {
+      "type": "int",
+      "range": [
+        0,
+        4
+      ],
+      "description": "Count of past subject failures (0 to 4)."
+    },
+    "absences": {
+      "type": "int",
+      "range": [
+        0,
+        93
+      ],
+      "description": "Recorded school absence sessions."
+    },
+    "schoolsup": {
+      "type": "int (binary)",
+      "range": [
+        0,
+        1
+      ],
+      "description": "1 if receiving remedial institutional academic support, else 0."
+    },
+    "paid": {
+      "type": "int (binary)",
+      "range": [
+        0,
+        1
+      ],
+      "description": "1 if enrolled in supplementary subject tutoring, else 0."
+    }
+  },
+  "target": {
+    "name": "at_risk",
+    "classes": {
+      "0": "On-Track (G3 >= 10 on 20-point scale)",
+      "1": "At-Risk (G3 < 10 on 20-point scale)"
+    }
+  },
+  "performance_comparison": {
+    "baseline_dummy": {
+      "model_name": "DummyClassifier (Most Frequent)",
+      "accuracy": 0.6667,
+      "precision_at_risk": 0.0,
+      "recall_at_risk": 0.0,
+      "f1_at_risk": 0.0,
+      "macro_f1": 0.4
+    },
+    "logistic_regression": {
+      "model_name": "Logistic Regression",
+      "accuracy": 0.798,
+      "precision_at_risk": 0.697,
+      "recall_at_risk": 0.697,
+      "f1_at_risk": 0.697,
+      "macro_f1": 0.7727,
+      "roc_auc": 0.9178
+    },
+    "random_forest_production": {
+      "model_name": "RandomForestClassifier",
+      "hyperparameters": {
+        "n_estimators": 100,
+        "max_depth": 4,
+        "min_samples_split": 4,
+        "min_samples_leaf": 2,
+        "class_weight": "balanced",
+        "random_state": 42
+      },
+      "accuracy": 0.798,
+      "precision_at_risk": 0.6444,
+      "recall_at_risk": 0.8788,
+      "f1_at_risk": 0.7436,
+      "macro_f1": 0.7885,
+      "weighted_f1": 0.8034,
+      "roc_auc": 0.9242,
+      "confusion_matrix": {
+        "true_negatives": 50,
+        "false_positives": 16,
+        "false_negatives": 4,
+        "true_positives": 29
+      },
+      "feature_importances": {
+        "g1_score": 0.7084,
+        "absences": 0.0965,
+        "studytime": 0.0251,
+        "failures": 0.1183,
+        "schoolsup": 0.0351,
+        "paid": 0.0166
+      }
+    }
+  },
+  "limitations_and_ethics": {
+    "non_discrimination_statement": "Strictly excludes demographic and personal attributes (sex, age, address, family cohabitation, alcohol, relationships) to prevent bias and ensure ethical alignment.",
+    "domain_transfer_limitation": "Trained on secondary school mathematics records in Portugal (0-20 grade scale). College/university grade systems (e.g. 10.0 CGPA scale) require mapped approximations.",
+    "advisory_status": "This model is strictly advisory and must NOT be used to make automated high-stakes academic decisions or determine career placement outcomes."
+  }
+}

@@ -1,0 +1,183 @@
+/* AI Campus Companion — Academic Audit & Performance Styles */
+
+.academic-score-banner {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.1));
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.academic-score-main {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.academic-score-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 4px solid var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.academic-score-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.academic-score-sub {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.subject-perf-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.subject-perf-item {
+  background: var(--background-alt);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all var(--transition-fast);
+}
+
+.subject-perf-item:hover {
+  border-color: var(--primary);
+}
+
+.subject-perf-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subject-code-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: var(--primary-light);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.subject-name-txt {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.subject-meta-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* CGPA Trend Chart (Pure CSS / Flex) */
+.chart-container-card {
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  margin-bottom: 24px;
+}
+
+.bar-chart-flex {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 220px;
+  padding-top: 20px;
+  border-bottom: 2px solid var(--surface-border);
+  gap: 16px;
+}
+
+.chart-bar-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.chart-bar-pillar {
+  width: 48px;
+  border-top-left-radius: var(--radius-sm);
+  border-top-right-radius: var(--radius-sm);
+  background: linear-gradient(180deg, var(--primary) 0%, rgba(99, 102, 241, 0.4) 100%);
+  transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.chart-bar-pillar:hover {
+  background: linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
+  box-shadow: 0 0 12px var(--primary-glow);
+}
+
+.chart-bar-value-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.chart-bar-x-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* Filter Buttons Group */
+.filter-tabs-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.filter-tab-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: var(--background-alt);
+  border: 1px solid var(--surface-border);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.filter-tab-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--text-muted);
+}
+
+.filter-tab-btn.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}

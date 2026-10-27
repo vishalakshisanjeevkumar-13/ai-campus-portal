@@ -1,0 +1,248 @@
+/* AI Campus Companion — Dashboard Styles & Intelligence Pipeline */
+
+/* Dashboard Layout Grids */
+.dashboard-grid-main {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.dashboard-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dashboard-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Intelligence KPI Cards Grid */
+.intelligence-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+/* Intelligence Processing Pipeline Banner */
+.intelligence-pipeline-card {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pipeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.pipeline-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pipeline-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 10px var(--success);
+  animation: pulseGlow 2s infinite;
+}
+
+.pipeline-flow-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: auto;
+  padding: 8px 0;
+  gap: 6px;
+}
+
+.pipeline-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 100px;
+  text-align: center;
+  padding: 8px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  transition: all var(--transition-fast);
+}
+
+.pipeline-node:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.pipeline-node.active {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  box-shadow: 0 0 12px var(--primary-glow);
+}
+
+.pipeline-node-icon {
+  font-size: 1.1rem;
+}
+
+.pipeline-node-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.pipeline-arrow {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+}
+
+/* Priority Areas Section */
+.priority-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Today's Adaptive Plan */
+.todays-plan-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.tasks-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Skill Snapshot Widget */
+.skill-snapshot-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.skill-snapshot-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 14px;
+  background: var(--background-alt);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.skill-snapshot-item:hover {
+  border-color: var(--primary);
+}
+
+.skill-snapshot-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skill-snapshot-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.skill-snapshot-scores {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.skill-snapshot-scores strong {
+  color: var(--text-primary);
+}
+
+.skill-snapshot-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Career Readiness Target Widget */
+.career-target-box {
+  background: linear-gradient(145deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.05));
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
+
+.target-role-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.target-role-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+
+.target-comparison-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.comparison-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+}
+
+.missing-skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0 16px;
+}
+
+.missing-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--danger-light);
+  color: var(--danger);
+  border: 1px solid var(--danger-border);
+}

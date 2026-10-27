@@ -1,0 +1,167 @@
+/* AI Campus Companion — Responsive Design System */
+
+/* Desktop Large (1200px+) */
+@media (min-width: 1200px) {
+  .intelligence-kpi-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tablet (768px to 1199px) */
+@media (max-width: 1199px) {
+  :root {
+    --sidebar-width: 240px;
+  }
+  
+  .dashboard-grid-main {
+    grid-template-columns: 1fr;
+  }
+
+  .intelligence-kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .competency-branches-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .subject-perf-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-container {
+    padding: 20px 24px 36px;
+  }
+
+  .twin-orbit-ring {
+    width: 340px;
+    height: 340px;
+  }
+}
+
+/* Mobile Devices (< 768px) */
+@media (max-width: 767px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    width: 280px !important;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .main-wrapper {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  .mobile-menu-trigger {
+    display: flex;
+  }
+
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .search-box-wrapper {
+    display: none;
+  }
+
+  .navbar-user-name {
+    display: none;
+  }
+
+  .page-container {
+    padding: 16px 14px 32px;
+  }
+
+  .intelligence-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-grid-main {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .role-selection-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .competency-branches-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-page-wrapper {
+    flex-direction: column;
+  }
+
+  .auth-brand-side {
+    padding: 32px 20px;
+  }
+
+  .auth-form-side {
+    padding: 24px 16px;
+  }
+
+  .auth-hero-headline {
+    font-size: 1.85rem;
+  }
+
+  .onboarding-body {
+    padding: 20px 16px;
+  }
+
+  .onboarding-actions {
+    padding: 16px;
+  }
+
+  .academic-score-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 20px;
+  }
+
+  .skill-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .digital-twin-wrapper {
+    min-height: 480px;
+    padding: 20px 10px;
+  }
+
+  .twin-node-satellite {
+    position: static !important;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .twin-orbit-ring {
+    display: none;
+  }
+
+  .chat-message-row {
+    max-width: 95%;
+  }
+
+  .dropdown-panel {
+    right: 10px;
+    width: calc(100vw - 20px);
+  }
+
+  .toast-container {
+    right: 14px;
+    bottom: 14px;
+    width: calc(100% - 28px);
+  }
+}

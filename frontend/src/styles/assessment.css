@@ -1,0 +1,188 @@
+/* AI Campus Companion — Assessment & Quiz Arena Styles */
+
+.quiz-arena-card {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  box-shadow: var(--shadow-xl);
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.quiz-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--surface-border);
+  margin-bottom: 24px;
+}
+
+.quiz-question-counter {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quiz-timer-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: var(--background-alt);
+  border: 1px solid var(--surface-border);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.quiz-timer-pill.urgent {
+  background: var(--danger-light);
+  border-color: var(--danger);
+  color: var(--danger);
+  animation: pulseGlow 1.5s infinite;
+}
+
+.quiz-question-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.45;
+  margin-bottom: 16px;
+}
+
+.quiz-code-block {
+  background: #0f172a;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: #38bdf8;
+  overflow-x: auto;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.quiz-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.quiz-option-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: var(--radius-lg);
+  background: var(--background-alt);
+  border: 2px solid var(--surface-border);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: left;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.quiz-option-btn:hover {
+  border-color: var(--primary);
+  background: var(--surface-hover);
+}
+
+.quiz-option-btn.selected {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  font-weight: 600;
+}
+
+.option-letter-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.quiz-option-btn.selected .option-letter-badge {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.quiz-actions-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid var(--surface-border);
+}
+
+/* Assessment Results Celebration View */
+.assessment-result-card {
+  text-align: center;
+  padding: 40px 24px;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-xl);
+  max-width: 640px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-xl);
+}
+
+.result-celebration-badge {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--success), #34d399);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 2.5rem;
+  margin: 0 auto 20px;
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+}
+
+.result-score-comparison {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: 24px 0;
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  background: var(--background-alt);
+  border: 1px solid var(--surface-border);
+}
+
+.score-box-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.score-box-col .val {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.score-box-col.new-score .val {
+  color: var(--success);
+}
